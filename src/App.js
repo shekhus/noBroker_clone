@@ -16,9 +16,7 @@ import config from './config.json';
 function App() {
   const [provider, setProvider] = useState(null)
   const [escrow, setEscrow] = useState(null)
-
   const [account, setAccount] = useState(null)
-
   const [homes, setHomes] = useState([])
   const [home, setHome] = useState({})
   const [toggle, setToggle] = useState(false);
@@ -33,9 +31,9 @@ function App() {
     // console.log(config[network.chainId].realEstate.address, RealEstate, provider)
 
     const totalSupply = await realEstate.totalSupply()
-    // console.log(totalSupply)
+    console.log(totalSupply)
     const homes = []
-    // console.log(homes)
+    console.log(homes)
     for (var i = 1; i <= totalSupply; i++) {
       const uri = await realEstate.tokenURI(i)
       const response = await fetch(uri)
